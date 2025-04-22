@@ -28,7 +28,7 @@ app.use("/api", authRoutes);
 
 // DB connection
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect("mongodb+srv://harshvadher5114:harshvadher5114@cluster0.nafskz6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
