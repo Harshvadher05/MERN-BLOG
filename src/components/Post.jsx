@@ -16,7 +16,7 @@ export default function Post({
       <div className="image h-48 overflow-hidden">
         <Link to={`/post/${_id}`}>
           <img
-            src={`https://mern-blog-833h.onrender.com` + cover}
+            src={`https://mern-blog-833h.onrender.com/` + cover}
             alt=""
             className="w-full h-full object-cover hover:opacity-90 transition-opacity duration-300"
           />
