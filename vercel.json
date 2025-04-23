@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "https://mern-blog-1-4qpq.onrender.com"
-    }
-  ]
-}

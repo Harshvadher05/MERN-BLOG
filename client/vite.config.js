@@ -7,4 +7,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://your-backend-url.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  }
 })

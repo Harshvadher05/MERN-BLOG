@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+dotenv.config();
 
 const cookieParser = require("cookie-parser");
 const multer = require("multer");
@@ -11,7 +12,6 @@ const uploadMiddleware = multer({ dest: "uploads/" });
 const Post = require("./models/Post");
 const jwt = require("jsonwebtoken");
 
-dotenv.config();
 
 const app = express();
 const PORT = 4000;
@@ -20,7 +20,7 @@ const secret = process.env.secret;
 // Middleware
 const allowedOrigin = [
   "https://mern-blog-orcin-six.vercel.app/",
-  // "http://localhost:5173",
+  "http://localhost:5173",
 ];
 app.use(cors({ origin: allowedOrigin, credentials: true }));
 app.use(express.json());

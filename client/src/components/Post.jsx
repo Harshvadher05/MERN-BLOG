@@ -1,6 +1,6 @@
 import { formatISO9075 } from "date-fns";
 import { Link } from "react-router-dom";
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
+// const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 export default function Post({
   _id,
@@ -16,7 +16,7 @@ export default function Post({
       <div className="image h-48 overflow-hidden">
         <Link to={`/post/${_id}`}>
           <img
-            src={`${baseUrl}/` + cover}
+            src={`http://localhost:4000/` + cover}
             alt=""
             className="w-full h-full object-cover hover:opacity-90 transition-opacity duration-300"
           />
