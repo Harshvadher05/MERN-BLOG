@@ -18,7 +18,11 @@ const PORT = 4000;
 const secret = "asdfe45we45w345wegw345werjktjwertkj";
 
 // Middleware
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+const allowedOrigin = [
+  "https://mern-blog-mu-one.vercel.app/",
+  "http://localhost:5173",
+];
+app.use(cors({ origin: allowedOrigin, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -28,10 +32,13 @@ app.use("/api", authRoutes);
 
 // DB connection
 mongoose
-  .connect("mongodb+srv://harshvadher5114:harshvadher5114@cluster0.nafskz6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://harshvadher5114:harshvadher5114@cluster0.nafskz6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
