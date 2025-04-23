@@ -31,6 +31,14 @@ A full-stack **MERN blog app** where users can register, log in, create, edit, a
 
 ---
 
+## 🌐 Live Link
+
+You can check out the live version of the MERN Blog Application here:
+
+[**Live Demo**](https://mern-blog-1-sssj.onrender.com)
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -54,5 +62,5 @@ cd api
 npm install
 
 # Install frontend dependencies
-cd ../client
+cd ..
 npm install
