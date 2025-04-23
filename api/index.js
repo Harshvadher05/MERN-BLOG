@@ -18,7 +18,7 @@ const secret = process.env.secret;
 
 // Middleware
 const allowedOrigin = [
-  "https://mern-blog-ecru-sigma.vercel.app/",
+  "https://mern-blog-1-sssj.onrender.com",
   "http://localhost:5173",
 ];
 app.use(cors({ origin: allowedOrigin, credentials: true }));
