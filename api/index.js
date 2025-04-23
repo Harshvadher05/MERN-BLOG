@@ -12,14 +12,13 @@ const uploadMiddleware = multer({ dest: "uploads/" });
 const Post = require("./models/Post");
 const jwt = require("jsonwebtoken");
 
-
 const app = express();
 const PORT = 4000;
 const secret = process.env.secret;
 
 // Middleware
 const allowedOrigin = [
-  "https://mern-blog-orcin-six.vercel.app/",
+  "https://mern-blog-ecru-sigma.vercel.app/",
   "http://localhost:5173",
 ];
 app.use(cors({ origin: allowedOrigin, credentials: true }));
