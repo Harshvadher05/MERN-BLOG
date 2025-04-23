@@ -8,7 +8,7 @@ export default function RegisterPage() {
   async function register(ev) {
     ev.preventDefault();
     try {
-      const response = await fetch(`http://localhost:4000/api/register`, {
+      const response = await fetch(`https://mern-blog-833h.onrender.com/api/register`, {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },

@@ -10,7 +10,7 @@ export default function PostPage() {
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`https://mern-blog-833h.onrender.com/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -58,7 +58,7 @@ export default function PostPage() {
         <div className="image max-h-[300px] flex overflow-hidden mb-8">
           <img
             className="w-full object-cover object-center"
-            src={`http://localhost:4000/${postInfo.cover}`}
+            src={`https://mern-blog-833h.onrender.com/${postInfo.cover}`}
             alt=""
           />
         </div>
