@@ -15,7 +15,7 @@ dotenv.config();
 
 const app = express();
 const PORT = 4000;
-const secret = "asdfe45we45w345wegw345werjktjwertkj";
+const secret = process.env.secret;
 
 // Middleware
 const allowedOrigin = [

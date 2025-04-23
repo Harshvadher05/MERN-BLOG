@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 const salt = bcrypt.genSaltSync(10);
-const secret = "asdfe45we45w345wegw345werjktjwertkj";
+const secret = process.env.secret;
 
 // Register route
 router.post("/register", async (req, res) => {
