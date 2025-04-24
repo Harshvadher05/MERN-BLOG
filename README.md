@@ -57,10 +57,12 @@ You can check out the live version of the MERN Blog Application here:
 git clone https://github.com/yourusername/mern-blog.git
 cd mern-blog
 
-# Install backend dependencies
+# Install backend dependencies & Run
 cd api
 npm install
+node index.js
 
-# Install frontend dependencies
+# Install frontend dependencies & Run
 cd ..
 npm install
+npm run dev
