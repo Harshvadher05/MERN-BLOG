@@ -12,7 +12,7 @@ export default function Post({
   author,
 }) {
   return (
-    <div className="m-4 post bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
+    <div className=" post m-4 post bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
       <div className="image h-48 overflow-hidden">
         <Link to={`/post/${_id}`}>
           <img

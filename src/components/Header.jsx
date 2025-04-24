@@ -35,7 +35,7 @@ export default function Header() {
               alt="MyBlog Logo"
               className="h-8 w-auto"
             />
-            <span className="text-white font-bold text-xl">MyBlog</span>
+            <span className="hidden md:inline text-white font-bold text-xl">MyBlog</span>
           </Link>
           <nav className="flex items-center space-x-4">
             {username && (
