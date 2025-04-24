@@ -50,22 +50,47 @@ mongoose
 
 // Post creation
 app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
-  const { originalname, path } = req.file;
-  const ext = originalname.split(".").pop();
-  const newPath = path + "." + ext;
-  fs.renameSync(path, newPath);
+  // const { originalname, path } = req.file;
+  // const ext = originalname.split(".").pop();
+  // const newPath = path + "." + ext;
+  // fs.renameSync(path, newPath);
+
+  // const { token } = req.cookies;
+  // jwt.verify(token, secret, {}, async (err, info) => {
+  //   if (err) throw err;
+  //   const { title, summary, content } = req.body;
+  //   const postDoc = await Post.create({
+  //     title,
+  //     summary,
+  //     content,
+  //     cover: newPath,
+  //     author: info.id,
+  //   });
+  //   res.json(postDoc);
+  // });
+
+  const { path, mimetype } = req.file;
+  const fileData = fs.readFileSync(path); // Read binary
 
   const { token } = req.cookies;
   jwt.verify(token, secret, {}, async (err, info) => {
-    if (err) throw err;
+    if (err) return res.status(401).json("Unauthorized");
+
     const { title, summary, content } = req.body;
     const postDoc = await Post.create({
       title,
       summary,
       content,
-      cover: newPath,
+      cover: {
+        data: fileData,
+        contentType: mimetype,
+      },
       author: info.id,
     });
+
+    // Optionally delete the file after reading
+    fs.unlinkSync(path);
+
     res.json(postDoc);
   });
 });
