@@ -5,17 +5,31 @@ import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 // const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
+// ✅ Import BounceLoader
+import { BounceLoader } from "react-spinners";
+
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
+  const [loading, setLoading] = useState(true); // ✅ Loading state
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
+
   useEffect(() => {
     fetch(`https://mern-blog-833h.onrender.com/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
+        setLoading(false); // ✅ Turn off loader after fetch
       });
     });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-50">
+        <BounceLoader color="#1e40af" />
+      </div>
+    );
+  }
 
   if (!postInfo) return "";
 
